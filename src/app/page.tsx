@@ -1,12 +1,10 @@
-
 const Page = async () => {
 
-  const res = await fetch('https://code-psi-five.vercel.app/api')
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api`, { cache: 'no-store' })
   const response = await res.json();
 
   return (
     <>
-      <p>Test</p>
       <div>{response.message}</div>
     </>
   )
