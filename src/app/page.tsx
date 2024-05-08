@@ -21,11 +21,11 @@ const Home = async () => {
 
   // const [x, setX] = useState(true)
 
-  // const a = await getData('https://jsonplaceholder.typicode.com/posts');
-  // const b = await getData('https://jsonplaceholder.typicode.com/comments');
-  // const c = await getData('https://jsonplaceholder.typicode.com/users');
-  // const d = await getData('https://jsonplaceholder.typicode.com/albums');
-  // const e = await getData('https://jsonplaceholder.typicode.com/photos');
+  const a = await getData('https://jsonplaceholder.typicode.com/posts');
+  const b = await getData('https://jsonplaceholder.typicode.com/comments');
+  const c = await getData('https://jsonplaceholder.typicode.com/users');
+  const d = await getData('https://jsonplaceholder.typicode.com/albums');
+  const e = await getData('https://jsonplaceholder.typicode.com/photos');
 
   console.log('11111111111111111')
 
@@ -51,19 +51,19 @@ const Home = async () => {
         <ServerComponent url='https://jsonplaceholder.typicode.com/photos' />
       </Suspense> */}
 
-      <ClientComponent />
+      {/* <ClientComponent />
       <ServerComponent url='https://jsonplaceholder.typicode.com/posts' />
       <ServerComponent url='https://jsonplaceholder.typicode.com/comments' />
       <ServerComponent url='https://jsonplaceholder.typicode.com/users' />
       <ServerComponent url='https://jsonplaceholder.typicode.com/albums' />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/photos' />
+      <ServerComponent url='https://jsonplaceholder.typicode.com/photos' /> */}
 
-      {/* <ClientComponent />
+      <ClientComponent />
       <ServerComponent url='https://jsonplaceholder.typicode.com/posts' data={a} />
       <ServerComponent url='https://jsonplaceholder.typicode.com/comments' data={b} />
       <ServerComponent url='https://jsonplaceholder.typicode.com/users' data={c} />
       <ServerComponent url='https://jsonplaceholder.typicode.com/albums' data={d} />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/photos' data={e} /> */}
+      <ServerComponent url='https://jsonplaceholder.typicode.com/photos' data={e} />
 
 
 
