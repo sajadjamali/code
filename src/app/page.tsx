@@ -32,7 +32,7 @@ const Home = async () => {
   return (
     <>
 
-      <Suspense fallback={<p>Loadinggggggggggg</p>}>
+      {/* <Suspense fallback={<p>Loadinggggggggggg</p>}>
         <ClientComponent />
       </Suspense>
       <Suspense fallback={<p>Loading posts...</p>}>
@@ -49,14 +49,14 @@ const Home = async () => {
       </Suspense>
       <Suspense fallback={<p>Loading photos...</p>}>
         <ServerComponent url='https://jsonplaceholder.typicode.com/photos' />
-      </Suspense>
+      </Suspense> */}
 
-      {/* <ClientComponent />
+      <ClientComponent />
       <ServerComponent url='https://jsonplaceholder.typicode.com/posts' />
       <ServerComponent url='https://jsonplaceholder.typicode.com/comments' />
       <ServerComponent url='https://jsonplaceholder.typicode.com/users' />
       <ServerComponent url='https://jsonplaceholder.typicode.com/albums' />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/photos' /> */}
+      <ServerComponent url='https://jsonplaceholder.typicode.com/photos' />
 
       {/* <ClientComponent />
       <ServerComponent url='https://jsonplaceholder.typicode.com/posts' data={a} />
