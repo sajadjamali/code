@@ -58,6 +58,28 @@ const Home = async () => {
       <ServerComponent url='https://jsonplaceholder.typicode.com/albums' />
       <ServerComponent url='https://jsonplaceholder.typicode.com/photos' /> */}
 
+
+      <Suspense fallback={<p>Loadinggggggggggg</p>}>
+        <ClientComponent />
+      </Suspense>
+      <Suspense fallback={<p>Loading posts...</p>}>
+        <ServerComponent url='https://jsonplaceholder.typicode.com/posts' data={a} />
+      </Suspense>
+      <Suspense fallback={<p>Loading comments...</p>}>
+        <ServerComponent url='https://jsonplaceholder.typicode.com/comments' data={b} />
+      </Suspense>
+      <Suspense fallback={<p>Loading users...</p>}>
+        <ServerComponent url='https://jsonplaceholder.typicode.com/users' data={c} />
+      </Suspense>
+      <Suspense fallback={<p>Loading albums...</p>}>
+        <ServerComponent url='https://jsonplaceholder.typicode.com/albums' data={d} />
+      </Suspense>
+      <Suspense fallback={<p>Loading photos...</p>}>
+        <ServerComponent url='https://jsonplaceholder.typicode.com/photos' data={e} />
+      </Suspense>
+
+
+
       <ClientComponent />
       <ServerComponent url='https://jsonplaceholder.typicode.com/posts' data={a} />
       <ServerComponent url='https://jsonplaceholder.typicode.com/comments' data={b} />
