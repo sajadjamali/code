@@ -24,7 +24,7 @@ const ClientComponent = () => {
   if (isError) return <p>error</p>
 
   return (
-    <div>
+    <div style={{ height: '500px', overflow: 'auto' }}>
       {
         data?.map((d: any) => (
           <p key={d.id}>{d.body}</p>
