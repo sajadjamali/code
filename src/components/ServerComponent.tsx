@@ -12,11 +12,11 @@ const getData = async (url: string) => {
     }
 }
 
-const ServerComponent = async ({ url, data }: { url: string, data:any }) => {
-    // const data = await getData(url);
+const ServerComponent = async ({ url }: { url: string }) => {
+    const data = await getData(url);
     console.log(url)
     return (
-        <div>
+        <div style={{ height: '500px', overflow: 'auto' }}>
             <p>salam</p>
             {
                 data?.map((d: any) => (

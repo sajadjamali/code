@@ -21,18 +21,18 @@ const Home = async () => {
 
   // const [x, setX] = useState(true)
 
-  const a = await getData('https://jsonplaceholder.typicode.com/posts');
-  const b = await getData('https://jsonplaceholder.typicode.com/comments');
-  const c = await getData('https://jsonplaceholder.typicode.com/users');
-  const d = await getData('https://jsonplaceholder.typicode.com/albums');
-  const e = await getData('https://jsonplaceholder.typicode.com/photos');
+  // const a = await getData('https://jsonplaceholder.typicode.com/posts');
+  // const b = await getData('https://jsonplaceholder.typicode.com/comments');
+  // const c = await getData('https://jsonplaceholder.typicode.com/users');
+  // const d = await getData('https://jsonplaceholder.typicode.com/albums');
+  // const e = await getData('https://jsonplaceholder.typicode.com/photos');
 
   console.log('11111111111111111')
 
   return (
     <>
 
-      {/* <Suspense fallback={<p>Loadinggggggggggg</p>}>
+      <Suspense fallback={<p>Loadinggggggggggg</p>}>
         <ClientComponent />
       </Suspense>
       <Suspense fallback={<p>Loading posts...</p>}>
@@ -49,7 +49,7 @@ const Home = async () => {
       </Suspense>
       <Suspense fallback={<p>Loading photos...</p>}>
         <ServerComponent url='https://jsonplaceholder.typicode.com/photos' />
-      </Suspense> */}
+      </Suspense>
 
       {/* <ClientComponent />
       <ServerComponent url='https://jsonplaceholder.typicode.com/posts' />
@@ -59,7 +59,7 @@ const Home = async () => {
       <ServerComponent url='https://jsonplaceholder.typicode.com/photos' /> */}
 
 
-      <Suspense fallback={<p>Loadinggggggggggg</p>}>
+      {/* <Suspense fallback={<p>Loadinggggggggggg</p>}>
         <ClientComponent />
       </Suspense>
       <Suspense fallback={<p>Loading posts...</p>}>
@@ -86,7 +86,7 @@ const Home = async () => {
       <ServerComponent url='https://jsonplaceholder.typicode.com/users' data={c} />
       <ServerComponent url='https://jsonplaceholder.typicode.com/albums' data={d} />
       <ServerComponent url='https://jsonplaceholder.typicode.com/photos' data={e} />
-
+ */}
 
 
 
