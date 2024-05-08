@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import ReactQueryProvider from '@/providers/ReactQueryProvider'
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ["latin"] });
+const myFont = localFont({
+  src: [
+    {
+      path: '../../public/assets/fonts/Vazir.woff'
+    },
+    {
+      path: '../../public/assets/fonts/Vazir.ttf'
+    }
+  ]
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${myFont.className}`}>
         <ReactQueryProvider>
           {children}
         </ReactQueryProvider>

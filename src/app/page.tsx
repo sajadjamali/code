@@ -27,14 +27,12 @@ const Home = async () => {
   // const d = await getData('https://jsonplaceholder.typicode.com/albums');
   // const e = await getData('https://jsonplaceholder.typicode.com/photos');
 
-  console.log('11111111111111111')
-
   return (
     <>
 
-      <Suspense fallback={<p>Loadinggggggggggg</p>}>
+      {/* <Suspense fallback={<p>Loadinggggggggggg</p>}>
         <ClientComponent />
-      </Suspense>
+      </Suspense> */}
       <Suspense fallback={<p>Loading posts...</p>}>
         <ServerComponent url='https://jsonplaceholder.typicode.com/posts' />
       </Suspense>

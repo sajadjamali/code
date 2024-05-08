@@ -15,8 +15,7 @@ const getData = async (url: string) => {
 const ServerComponent = async ({ url }: { url: string }) => {
     const data = await getData(url);
     return (
-        <div className='w-10/12 md:w-8/12 lg:w-6/12 mx-auto' style={{ height: '500px', overflow: 'auto' }}>
-            <p>salam</p>
+        <div className='w-11/12 text-sm md:text-base md:w-8/12 lg:w-6/12 mx-auto' style={{ height: '500px', overflow: 'auto' }}>
             {
                 data?.map((d: any) => (
                     <p key={d.id}>{d.body}</p>
