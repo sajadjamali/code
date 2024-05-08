@@ -1,3 +1,3 @@
 export async function GET() {
-    return Response.json({ message: 'Hi Sajad !' }, { status: 200 });
+    return Response.json({ message: 'qqqq' });
 }
