@@ -15,12 +15,12 @@ const fetcherFunc = async (url: string) => {
   }
 }
 
-export async function getMovies(categorie: string, page: number) {
+async function getMovies(categorie: string, page: number) {
   const movies = await fetcherFunc(`${baseUrl}/movie/${categorie}?page=${page}&api_key=${api_key}`)
   return movies
 }
 
-const Home = async () => {
+const Page = async () => {
 
   const movies = await getMovies('top_rated', 2);
 
@@ -39,4 +39,4 @@ const Home = async () => {
 
 };
 
-export default Home;
+export default Page;
