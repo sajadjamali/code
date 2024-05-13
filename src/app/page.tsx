@@ -1,12 +1,11 @@
-// 'use client'
-// import { useState } from 'react'
-import ClientComponent from "@/components/ClientComponent";
-import { Suspense } from "react";
-import ServerComponent from "@/components/ServerComponent";
+import Image from 'next/image';
 
-const getData = async (url: string) => {
+const api_key = "a9a8b69054a2ff955dc152216931af1a"
+const baseUrl = "https://api.themoviedb.org/3";
+
+const fetcherFunc = async (url: string) => {
   try {
-    const res = await fetch(url, { cache: 'no-store' })
+    const res = await fetch(url)
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
@@ -16,90 +15,28 @@ const getData = async (url: string) => {
   }
 }
 
+export async function getMovies(categorie: string, page: number) {
+  const movies = await fetcherFunc(`${baseUrl}/movie/${categorie}?page=${page}&api_key=${api_key}`)
+  return movies
+}
 
 const Home = async () => {
 
-  // const [x, setX] = useState(true)
-
-  // const a = await getData('https://jsonplaceholder.typicode.com/posts');
-  // const b = await getData('https://jsonplaceholder.typicode.com/comments');
-  // const c = await getData('https://jsonplaceholder.typicode.com/users');
-  // const d = await getData('https://jsonplaceholder.typicode.com/albums');
-  // const e = await getData('https://jsonplaceholder.typicode.com/photos');
+  const movies = await getMovies('top_rated', 2);
 
   return (
-    <>
 
-      {/* <Suspense fallback={<p>Loadinggggggggggg</p>}>
-        <ClientComponent />
-      </Suspense> */}
-      <Suspense fallback={<p>Loading posts...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/posts' />
-      </Suspense>
-      <Suspense fallback={<p>Loading comments...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/comments' />
-      </Suspense>
-      <Suspense fallback={<p>Loading users...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/users' />
-      </Suspense>
-      <Suspense fallback={<p>Loading albums...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/albums' />
-      </Suspense>
-      <Suspense fallback={<p>Loading photos...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/photos' />
-      </Suspense>
-
-      {/* <ClientComponent />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/posts' />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/comments' />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/users' />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/albums' />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/photos' /> */}
-
-
-      {/* <Suspense fallback={<p>Loadinggggggggggg</p>}>
-        <ClientComponent />
-      </Suspense>
-      <Suspense fallback={<p>Loading posts...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/posts' data={a} />
-      </Suspense>
-      <Suspense fallback={<p>Loading comments...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/comments' data={b} />
-      </Suspense>
-      <Suspense fallback={<p>Loading users...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/users' data={c} />
-      </Suspense>
-      <Suspense fallback={<p>Loading albums...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/albums' data={d} />
-      </Suspense>
-      <Suspense fallback={<p>Loading photos...</p>}>
-        <ServerComponent url='https://jsonplaceholder.typicode.com/photos' data={e} />
-      </Suspense>
-
-
-
-      <ClientComponent />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/posts' data={a} />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/comments' data={b} />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/users' data={c} />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/albums' data={d} />
-      <ServerComponent url='https://jsonplaceholder.typicode.com/photos' data={e} />
- */}
-
-
-
-
-      {/* {
-        x &&
-        <>
-          <ClientComponent />
-          <ClientComponent />
-          <ClientComponent />
-        </>
+    <section className="hidden mt-6 gap-y-5 gap-x-4 place-items-center items-center min-[500px]:grid justify-center min-[500px]:grid-cols-2 min-[650px]:grid-cols-3 min-[1050px]:grid-cols-4 min-[1450px]:grid-cols-5 min-[1700px]:grid-cols-6">
+      {
+        movies.results.map((movie:any) => (
+          <div>{movie.original_title}</div>
+        ))
       }
-      <button onClick={() => setX(!x)}>click</button> */}
-    </>
-  );
-}
+    </section>
+
+    // <Image src='/img.png' className='h-96 w-80' width={200} height={200} alt='not found' />
+  )
+
+};
 
 export default Home;
