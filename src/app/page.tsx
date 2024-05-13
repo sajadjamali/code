@@ -29,7 +29,7 @@ const Page = async () => {
     <section className="mt-6 gap-y-5 gap-x-4 place-items-center items-center min-[500px]:grid justify-center min-[500px]:grid-cols-2 min-[650px]:grid-cols-3 min-[1050px]:grid-cols-4 min-[1450px]:grid-cols-5 min-[1700px]:grid-cols-6">
       {
         movies.results.map((movie: any, index: number) => (
-          <section>
+          <section key={index}>
             <Image
             className='w-auto'
               alt={movie.title}
