@@ -1,7 +1,7 @@
 import Image from 'next/image';
-
 const api_key = "a9a8b69054a2ff955dc152216931af1a"
 const baseUrl = "https://api.themoviedb.org/3";
+const imgBaseUrl = "https://image.tmdb.org/t/p/w500";
 
 const fetcherFunc = async (url: string) => {
   try {
@@ -22,14 +22,25 @@ async function getMovies(categorie: string, page: number) {
 
 const Page = async () => {
 
-  const movies = await getMovies('top_rated', 2);
+  const movies = await getMovies('top_rated', 3);
 
   return (
 
     <section className="mt-6 gap-y-5 gap-x-4 place-items-center items-center min-[500px]:grid justify-center min-[500px]:grid-cols-2 min-[650px]:grid-cols-3 min-[1050px]:grid-cols-4 min-[1450px]:grid-cols-5 min-[1700px]:grid-cols-6">
       {
-        movies.results.map((movie:any, index:number) => (
-          <div key={index}>{movie.original_title}</div>
+        movies.results.map((movie: any, index: number) => (
+          <section>
+            <Image
+            className='w-auto'
+              alt={movie.title}
+              width={250}
+              height={250}
+              src={`${imgBaseUrl}${movie.poster_path}`}
+              unoptimized
+            />
+            <div key={index}>{movie.original_title}</div>
+          </section>
+
         ))
       }
     </section>
