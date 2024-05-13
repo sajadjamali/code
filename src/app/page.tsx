@@ -26,26 +26,28 @@ const Page = async () => {
 
   return (
 
-    <section className="mt-6 gap-y-5 gap-x-4 place-items-center items-center min-[500px]:grid justify-center min-[500px]:grid-cols-2 min-[650px]:grid-cols-3 min-[1050px]:grid-cols-4 min-[1450px]:grid-cols-5 min-[1700px]:grid-cols-6">
+    <section className="mt-6 grid min-[400px]:grid-cols-2 min-[650px]:grid-cols-3 min-[1050px]:grid-cols-4 min-[1450px]:grid-cols-5 min-[1700px]:grid-cols-6">
       {
         movies.results.map((movie: any, index: number) => (
-          <section key={index}>
-            <Image
-            className='w-auto'
-              alt={movie.title}
-              width={250}
-              height={250}
-              src={`${imgBaseUrl}${movie.poster_path}`}
-              unoptimized
-            />
-            <div key={index}>{movie.original_title}</div>
-          </section>
-
+          <div key={index}>
+            <div className='relative w-72 h-96 overflow-hidden'>
+              <Image
+                fill
+                className='w-auto'
+                alt={movie.title}
+                // width={250}
+                // height={250}
+                src={`${imgBaseUrl}${movie.poster_path}`}
+                unoptimized
+              />
+              {/* <p key={index}>{movie.original_title}</p> */}
+            </div>
+            <p key={index}>{movie.original_title}</p>
+          </div>
         ))
       }
+      {/* <Image src='/img.png' width={200} height={200} alt='not found' /> */}
     </section>
-
-    // <Image src='/img.png' className='h-96 w-80' width={200} height={200} alt='not found' />
   )
 
 };
