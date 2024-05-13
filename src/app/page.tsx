@@ -28,8 +28,8 @@ const Home = async () => {
 
     <section className="hidden mt-6 gap-y-5 gap-x-4 place-items-center items-center min-[500px]:grid justify-center min-[500px]:grid-cols-2 min-[650px]:grid-cols-3 min-[1050px]:grid-cols-4 min-[1450px]:grid-cols-5 min-[1700px]:grid-cols-6">
       {
-        movies.results.map((movie:any) => (
-          <div>{movie.original_title}</div>
+        movies.results.map((movie:any, index:number) => (
+          <div key={index}>{movie.original_title}</div>
         ))
       }
     </section>
