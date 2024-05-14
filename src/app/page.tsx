@@ -15,7 +15,7 @@ const fetcherFunc = async (url: string) => {
   }
 }
 
-export async function getMovie(id: string) {
+async function getMovie(id: string) {
   const movie = await fetcherFunc(`${baseUrl}/movie/${id}?append_to_response=videos,credits&api_key=${api_key}`);
   return movie
 }
