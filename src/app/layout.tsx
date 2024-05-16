@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ReactQueryProvider from '@/providers/ReactQueryProvider'
-// import localFont from 'next/font/local'
-
-// const myFont = localFont({
-//   src: [
-//     {
-//       path: '../../public/assets/fonts/Vazir.woff'
-//     },
-//     {
-//       path: '../../public/assets/fonts/Vazir.ttf'
-//     }
-//   ]
-// })
 
 export const metadata: Metadata = {
   title: "Create Next App",
